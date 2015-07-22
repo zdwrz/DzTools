@@ -1,0 +1,48 @@
+.cal-header-row{
+	text-align: center;
+}
+.cal-header-row .navi-button{
+	text-align: center;
+	margin: 1%;
+	font-weight: bold;
+	vertical-align: middle;
+}
+.cal-header-row .header-content{
+	text-align: center;
+	background-color: #00CCFF;
+	font-weight: bold;
+	color: #FFFFFF;
+	vertical-align: middle;
+}
+.cal-title-row div{
+	text-align: center;
+	background-color: #00CCFF;
+	margin: 0.5%;
+	font-weight: bold;
+	color: #FFFFFF;
+	vertical-align: middle;
+}
+
+.cal-title-row .row-weekend{
+	background-color: #FF9933;
+}
+.cal-content-row .row-weekend{
+	background-color: #FFCE9D;
+}
+
+.cal-content-row .row-today{
+	background-color: #003366;
+}
+
+.cal-title-row div p{
+	vertical-align: middle;
+}
+.cal-content-row div{
+	text-align: center;
+	background-color: #6699FF;
+	margin: 0.5%;
+	font-weight: bold;
+	font-family:sans-serif;
+	color: #FFFFFF;
+	height: 5em;	
+}
