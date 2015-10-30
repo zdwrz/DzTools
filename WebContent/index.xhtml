@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -8,63 +7,80 @@
 	xmlns:dz="http://com.dztools.yinCal">
 <h:head>
 	<h:outputStylesheet library="css" name="dztool.css"/>
+	<h:outputStylesheet library="css" name="style.css"/>
+	<h:outputScript library="js" name="jquery.min.js" />
+	<h:outputScript library="js" name="image_slide.js" />
 	<h:outputStylesheet library="primefaces" name="primefaces.css" />
+	<title>Aweiz</title>
+	<meta name="description" content="Aweiz Index Page" />
+	<meta name="keywords" content="DzTools" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 </h:head>	
-    <h:body>
+<!-- <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head> -->
+
+<h:body>
+  <div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1><span>Aweiz</span></h1>
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>Welcome ~</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li class="current"><a href="index.xhtml">Home</a></li>
+        <li><a href="YinCal.xhtml">Chinese Calendar</a></li>
+        <li><a href="DateCalculator.xhtml">DateCalculator</a></li>
+      </ul>
+    </div><!--close menubar-->	
     
-    <h:form>
-  		
-    	<div class="ui-grid">
-		    <div class="ui-grid-row cal-header-row">
-		        <div class="ui-grid-col-1 navi-button">
-		        	<p:commandButton value="上一年" action="#{calBean.actionPrevYear}" update="@form"/>
-		        </div>
-		        <div class="ui-grid-col-1 navi-button">
-		        	<p:commandButton value="下一年" action="#{calBean.actionNextYear}" update="@form"/>
-		        </div>
-		        <div class="ui-grid-col-1 navi-button">
-			  		<p:commandButton value="Today" action="#{calBean.actionToday}" update="@form"/>
-		        </div>
-		        <div class="ui-grid-col-1 navi-button">
-			  		<p:commandButton value="上一月" action="#{calBean.actionPrevMonth}" update="@form"/>
-		        </div>
-		        <div class="ui-grid-col-1 navi-button">
-			  		<p:commandButton value="下一月" action="#{calBean.actionNextMonth}" update="@form"/>
-		        </div>
-		    </div>
-	    </div>
-    	<div class="ui-grid">
-		    <div class="ui-grid-row cal-header-row">
-		        <div class="ui-grid-col-8 header-content"><p><p:outputLabel value="#{calBean.currentYear}年"/><p:outputLabel value="#{calBean.currentMonth}月"/></p></div>
-		    </div>
-	    </div>
-    	<div class="ui-grid">
-		    <div class="ui-grid-row cal-title-row">
-		        <div class="ui-grid-col-1 row-weekend"><p>周日</p></div>
-		        <div class="ui-grid-col-1"><p>周一</p></div>
-		        <div class="ui-grid-col-1"><p>周二</p></div>
-		        <div class="ui-grid-col-1"><p>周三</p></div>
-		        <div class="ui-grid-col-1"><p>周四</p></div>
-		        <div class="ui-grid-col-1"><p>周五</p></div>
-		        <div class="ui-grid-col-1 row-weekend"><p>周六</p></div>
-		    </div>
-		    <ui:repeat value="#{calBean.calData}" var="aWeek" varStatus="statusO"> 
-			    <div class="ui-grid-row cal-content-row">
-				    <ui:repeat value="#{aWeek}" var="row" varStatus="statusO"> 
-				    	<h:panelGroup rendered="#{(statusO.index == 0 or statusO.index == 6 )and !row.today}">
-				        	<div class="ui-grid-col-1 row-weekend"><p>#{row.solarDate}</p><p>#{row.displyDate}</p></div>
-				        </h:panelGroup>
-				    	<h:panelGroup rendered="#{statusO.index != 0 and statusO.index != 6 and !row.today}">
-					        <div class="ui-grid-col-1"><p>#{row.solarDate}</p><p>#{row.displyDate}</p></div>
-				        </h:panelGroup>
-				    	<h:panelGroup rendered="#{row.today}">
-					        <div class="ui-grid-col-1 row-today"><p>#{row.solarDate}</p><p>#{row.displyDate}</p></div>
-				        </h:panelGroup>
-			        </ui:repeat>
-			    </div>
-		    </ui:repeat>
-	    </div>
-    </h:form>        
-    </h:body>
-    
+	<div id="site_content">		
+      <ul class="slideshow">
+        <li class="show"><img width="920" height="250" src="resources/images/home_1.jpg" alt="123456" /></li>
+        <li><img width="920" height="250" src="resources/images/home_2.jpg" alt="32121321" /></li>
+      </ul>   	 
+	 
+	  <div id="content">
+        <div class="content_item">
+		  <h1>If you say so</h1> 
+	      <p>123123</p>
+		  <div class="content_image">
+		    <img src="resources/images/content_image1.jpg" alt="image1"/>
+	      </div>
+		  <p>I don't know why I have this page.</p>
+		  <p>Nothing important to show here.</p>
+		  <br style="clear:both"/>
+		  
+		  <div class="content_container">
+		    <p>This is just a demo.</p>
+		  	<div class="button_small">
+		      <a href="#">Read more</a>
+		    </div><!--close button_small-->
+		  </div><!--close content_container-->
+          <div class="content_container">
+		    <p>Demo</p>          
+		  	<div class="button_small">
+		      <a href="#">Read more</a>
+		    </div><!--close button_small-->		  
+		  </div><!--close content_container-->			  
+		</div><!--close content_item-->
+      </div><!--close content-->   
+	</div><!--close site_content--> 
+  </div><!--close main-->
+  
+  <div id="footer">
+	  <a href="">daweizhuang.work@gmail.com</a>
+  </div><!--close footer-->  
+  
+</h:body>
 </html>

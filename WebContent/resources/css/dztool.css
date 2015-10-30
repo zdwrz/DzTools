@@ -21,6 +21,7 @@
 	font-weight: bold;
 	color: #FFFFFF;
 	vertical-align: middle;
+	cursor: default;
 }
 
 .cal-title-row .row-weekend{
@@ -37,6 +38,7 @@
 .cal-title-row div p{
 	vertical-align: middle;
 }
+
 .cal-content-row div{
 	text-align: center;
 	background-color: #6699FF;
@@ -45,4 +47,5 @@
 	font-family:sans-serif;
 	color: #FFFFFF;
 	height: 5em;	
+	cursor: default;
 }

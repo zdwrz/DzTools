@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="dztool.css"/>
+	<h:outputStylesheet library="css" name="style.css"/>
+	<h:outputScript library="js" name="image_slide.js" />
+	<h:outputStylesheet library="primefaces" name="primefaces.css" />
+	<title>Aweiz</title>
+	<meta name="description" content="Aweiz Index Page" />
+	<meta name="keywords" content="DzTools" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+</h:head>	
+<!-- <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head> -->
+
+<h:body>
+  <div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1><span>Aweiz</span></h1>
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>Welcome ~</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.xhtml">Home</a></li>
+        <li><a href="YinCal.xhtml">Chinese Calendar</a></li>
+        <li class="current"><a href="DateCalculator.xhtml">DateCalculator</a></li>
+      </ul>
+    </div><!--close menubar-->	
+    <div id="site_content">		
+	 <table width="100%">
+	    	<tr>
+	    		<td width="20%"></td>
+	    		<td>
+	    			 <h:form>
+	    			 <h:panelGrid columns="1">
+		    			 	<p:outputLabel for="start_date" value="Start Date:"/>
+					    	<p:calendar id="start_date" value="#{dateCalBean.inputDate}"></p:calendar>
+			    	</h:panelGrid>
+	    			 <h:panelGrid columns="2">
+		    			 	<p:outputLabel for="result60" value="After 60 days is "/>
+		    			 	<p:outputLabel id="result60" value="#{dateCalBean.result60}">
+		    			 		<f:convertDateTime pattern="MM/dd/yyyy"/>
+		    			 	</p:outputLabel>
+		    			 	<p:outputLabel for="result90" value="After 90 days is "/>
+		    			 	<p:outputLabel id="result90" value="#{dateCalBean.result90}">
+		    			 		<f:convertDateTime pattern="MM/dd/yyyy"/>
+		    			 	</p:outputLabel>
+		    			 	<p:outputLabel for="result120" value="After 120 days is "/>
+		    			 	<p:outputLabel id="result120" value="#{dateCalBean.result120}">
+		    			 		<f:convertDateTime pattern="MM/dd/yyyy"/>
+		    			 	</p:outputLabel>
+	   			 	</h:panelGrid>
+	    			 <h:panelGrid columns="1">
+		    			 	<p:commandButton process="@form" update="@form" action="#{dateCalBean.actionCal}" value="GO"/>
+	   			 	</h:panelGrid>
+	    			 <h:panelGrid columns="2">
+		    			 	<p:outputLabel for="plus_num" value="plus/minus:"/>
+		    			 	<p:inputText id="plus_num" value="#{dateCalBean.inputNumOfDays}">
+		    			 		<f:validateLongRange for="plus_num"/>
+		    			 	</p:inputText>
+		    			 	<p:outputLabel id="result" value="#{dateCalBean.result}">
+		    			 		<f:convertDateTime pattern="MM/dd/yyyy"/>
+		    			 	</p:outputLabel>
+	    			 	</h:panelGrid>
+				    </h:form>        
+	    		</td>
+	    		<td width="20%"></td>
+	    	</tr>
+	    </table>
+	  </div>
+	  </div>
+  <div id="footer">
+	  <a href="">daweizhuang.work@gmail.com</a>
+  </div><!--close footer-->  
+  
+</h:body>
+</html>

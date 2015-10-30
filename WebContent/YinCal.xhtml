@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="dztool.css"/>
+	<h:outputStylesheet library="css" name="style.css"/>
+	<h:outputScript library="js" name="image_slide.js" />
+	<h:outputStylesheet library="primefaces" name="primefaces.css" />
+	<title>Aweiz</title>
+	<meta name="description" content="Aweiz Index Page" />
+	<meta name="keywords" content="DzTools" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+</h:head>	
+<!-- <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head> -->
+
+<h:body>
+  <div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1><span>Aweiz</span></h1>
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>Welcome ~</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.xhtml">Home</a></li>
+        <li class="current"><a href="YinCal.xhtml">Chinese Calendar</a></li>
+        <li><a href="DateCalculator.xhtml">DateCalculator</a></li>
+      </ul>
+    </div><!--close menubar-->	
+    <div id="site_content" style="width:80%">	
+    <table width="100%">
+    	<tr>
+    		<td width="20%"></td>
+    		<td>
+    			 <h:form>
+			    	<div class="ui-grid">
+					    <div class="ui-grid-row cal-header-row">
+					        <div class="ui-grid-col-2 navi-button">
+					        	<p:commandButton value="上一年" action="#{calBean.actionPrevYear}" update="@form"/>
+					        </div>
+					        <div class="ui-grid-col-2 navi-button">
+					        	<p:commandButton value="下一年" action="#{calBean.actionNextYear}" update="@form"/>
+					        </div>
+					        <div class="ui-grid-col-2 navi-button">
+						  		<p:commandButton value="Today" action="#{calBean.actionToday}" update="@form"/>
+					        </div>
+					        <div class="ui-grid-col-2 navi-button">
+						  		<p:commandButton value="上一月" action="#{calBean.actionPrevMonth}" update="@form"/>
+					        </div>
+					        <div class="ui-grid-col-2 navi-button">
+						  		<p:commandButton value="下一月" action="#{calBean.actionNextMonth}" update="@form"/>
+					        </div>
+					    </div>
+				    </div>
+			    	<div class="ui-grid">
+					    <div class="ui-grid-row cal-header-row">
+					        <div class="ui-grid-col-12 header-content"><p><p:outputLabel value="#{calBean.currentYear}年"/><p:outputLabel value="#{calBean.currentMonth}月"/></p></div>
+					    </div>
+				    </div>
+			    	<div class="ui-grid">
+					    <div class="ui-grid-row cal-title-row">
+					        <div class="ui-grid-col-2 row-weekend"><p>周日</p></div>
+					        <div class="ui-grid-col-2"><p>周一</p></div>
+					        <div class="ui-grid-col-2"><p>周二</p></div>
+					        <div class="ui-grid-col-2"><p>周三</p></div>
+					        <div class="ui-grid-col-2"><p>周四</p></div>
+					        <div class="ui-grid-col-2"><p>周五</p></div>
+					        <div class="ui-grid-col-2 row-weekend"><p>周六</p></div>
+					    </div>
+					    <ui:repeat value="#{calBean.calData}" var="aWeek" varStatus="statusO"> 
+						    <div class="ui-grid-row cal-content-row">
+							    <ui:repeat value="#{aWeek}" var="row" varStatus="statusO"> 
+							    	<h:panelGroup rendered="#{(statusO.index == 0 or statusO.index == 6 )and !row.today}">
+							        	<div class="ui-grid-col-2 row-weekend" title="#{row.solarDate} - #{row.displyDate}"><p>#{row.solarDate}</p><p>#{row.displyDate}</p></div>
+							        </h:panelGroup>
+							    	<h:panelGroup rendered="#{statusO.index != 0 and statusO.index != 6 and !row.today}">
+								        <div class="ui-grid-col-2" title="#{row.solarDate} - #{row.displyDate}"><p>#{row.solarDate}</p><p>#{row.displyDate}</p></div>
+							        </h:panelGroup>
+							    	<h:panelGroup rendered="#{row.today}">
+								        <div class="ui-grid-col-2 row-today" title="#{row.solarDate} - #{row.displyDate}"><p>#{row.solarDate}</p><p>#{row.displyDate}</p></div>
+							        </h:panelGroup>
+						        </ui:repeat>
+						    </div>
+					    </ui:repeat>
+				    </div>
+			    </h:form>        
+    		</td>
+    		<td width="20%"></td>
+    	</tr>
+    </table>
+    </div>
+    </div>
+    </h:body>
+      <div id="footer">
+	  <a href="">daweizhuang.work@gmail.com</a>
+  </div><!--close footer-->  
+</html>

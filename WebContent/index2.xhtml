@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:dz="http://com.dztools.yinCal">
+<h:head>
+	<h:outputStylesheet library="css" name="dztool.css"/>
+	<h:outputStylesheet library="primefaces" name="primefaces.css" />
+</h:head>	
+    <h:body>
+    <table width="100%">
+    	<tr>
+    		<td width="20%"></td>
+    		<td>
+    			 <h:form>
+    			 	<h:panelGrid>
+				    	<p:commandButton value="Chinese Calendar" action="/YinCal.xhtml?faces-redirect=true"></p:commandButton>
+				    	<p:commandButton value="Date Calculator" action="/DateCalculator.xhtml?faces-redirect=true"></p:commandButton>
+			    	</h:panelGrid>
+			    </h:form>        
+    		</td>
+    		<td width="20%"></td>
+    	</tr>
+    </table>
+    </h:body>
+    
+</html>
