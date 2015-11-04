@@ -1,6 +1,9 @@
 package dztools.model;
 
-public class Lunar {
+import java.io.Serializable;
+
+public class  Lunar implements Serializable {
+	private static final long serialVersionUID = 7077701995830554664L;
 	private int year;
 	private int month;
 	private int day;
